@@ -1,0 +1,151 @@
+\usepackage{geometry}
+\geometry{
+	margin=1in,
+	headsep=14pt,
+}
+
+\usepackage{amssymb,amsmath,amsthm,nccmath}
+\usepackage{esdiff}
+\usepackage{float}
+\usepackage{parskip}[indent=0,skip=2\baselineskip]
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{attrib}
+\usepackage{dialogue}
+\usepackage{lips}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[x11names]{xcolor}
+
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{tkz-euclide}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{fit}
+\usetikzlibrary{shapes}
+\usetikzlibrary{matrix}
+\usetikzlibrary{calc}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bfalph}{\bfseries(\alph*)}
+
+% Header
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Stolen from jeffe.sty
+\def\@Class{MATH 416H}
+\def\Class#1{\renewcommand{\@Class}{#1}}
+
+\def\@Title{HW \#7}
+\def\Title#1{\renewcommand{\@Title}{#1}}
+
+\def\@Author{Your Name}
+\def\@NetID{netid}
+\def\Author#1#2{\renewcommand{\@Author}{#1}\renewcommand{\@NetID}{#2}}
+
+% \fancyheadoffset{.25cm}
+\lhead{\@Class}
+\chead{\@Title}
+\rhead{\@Author~(\@NetID)}
+
+% For some reason, the font size of `plain` was overridden
+\newtheoremstyle{thm}
+{\topsep}
+{\topsep}
+{}
+{}
+{\normalfont\bfseries\normalsize}
+{.}
+{ }
+{}
+
+\theoremstyle{thm}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\newtheorem{defn}{Definition}
+\newtheorem{conj}{Conjecture}
+\newtheorem{claim}{Claim}
+\newtheorem*{claim*}{Claim}
+
+\theoremstyle{remark}
+\newtheorem*{note}{Note}
+\newtheorem{remark}{Remark}
+
+% Environments
+\usepackage[most]{tcolorbox}
+\newtcolorbox{solution}
+{
+	enhanced,
+	breakable,
+	sharp corners,
+	parbox = false,
+	colback = black!10,
+	frame hidden,
+	% frame code = {
+	% 		\fill[fill=black!75!white] ([xshift=-.5mm]interior.south west) -- (interior.south west) -- (interior.north west) -- ([xshift=-.5mm]interior.north west);
+	% 	}
+	% toprule=0mm,
+	% bottomrule=0mm,
+	% rightrule=0mm,
+	borderline north = {0.5mm}{0mm}{black!10},
+	borderline south = {0.5mm}{0mm}{black!10},
+	borderline east = {0.5mm}{0mm}{black!10},
+	borderline west = {0.5mm}{0mm}{black!75!white}
+}
+% for some reason, tcb/ams nodisplayskip breaks everything, so we have to use nccmath
+
+\newtheoremstyle{problem}
+{3.5ex plus 1ex minus .2ex}%      Space above
+{2.3ex plus .2ex}%      Space below
+{}%         Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\normalfont\bfseries\large}% Thm head font
+{. }%        Punctuation after thm head
+{0pt}%     Space after thm head: " " = normal interword space;
+{}%         Thm head spec (can be left empty, meaning `normal')
+
+\theoremstyle{problem}
+\newtheorem{problembody}[section]{}
+\newenvironment{problem}
+{
+	\begin{problembody}
+		\addcontentsline{toc}{section}{\thesection}
+		}
+		{
+	\end{problembody}
+}
+
+\newtheoremstyle{problemnamed}
+{3.5ex plus 1ex minus .2ex}%      Space above
+{2.3ex plus .2ex}%      Space below
+{}%         Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\normalfont\bfseries\large}% Thm head font
+{. }%        Punctuation after thm head
+{0pt}%     Space after thm head: " " = normal interword space;
+{\thmnote{#3}}%         Thm head spec (can be left empty, meaning `normal')
+\theoremstyle{problemnamed}
+\newtheorem{problemnamedbody}{}
+
+
+\newenvironment{problemnamed}[1][\thesection]
+{
+	\begin{problemnamedbody}[#1]
+		\addcontentsline{toc}{section}{#1}
+		}
+		{
+	\end{problemnamedbody}
+}
+
