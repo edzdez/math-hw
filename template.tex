@@ -327,9 +327,9 @@ Prove that $T^* \alpha$ is $k$-linear and alternating.
 
 	Similarly, for $1 \le i < j \le k$, we have
 	\begin{align*}
-		T^* \alpha (v_1, \dots, \overbrace{v_j}^{\text{$i$th slot}}, \dots, \overbrace{v_i}^{\text{$j$th slot}}, \dots, v_k) & = \alpha(T(v_1), \dots, T(v_j), \dots, T(v_i), \dots, v_k)                                \\
-		                                                                                                                     & = - \alpha T(v_1, \dots, T(v_i), \dots, T(v_j), \dots, v_k) \tag{$\alpha$ is alternating} \\
-		                                                                                                                     & = - T(v_1, \dots, v_i, \dots, v_j, \dots, v_k)
+		T^* \alpha (v_1, \dots, \overbrace{v_j}^{\text{$i$th slot}}, \dots, \overbrace{v_i}^{\text{$j$th slot}}, \dots, v_k) & = \alpha(T(v_1), \dots, T(v_j), \dots, T(v_i), \dots, T(v_k))                                  \\
+		                                                                                                                     & = - \alpha (T(v_1), \dots, T(v_i), \dots, T(v_j), \dots, T(v_k)) \tag{$\alpha$ is alternating} \\
+		                                                                                                                     & = - T^*\alpha(v_1, \dots, v_i, \dots, v_j, \dots, v_k)
 	\end{align*}
 	So, $T^* \alpha$ is alternating.
 \end{solution}
