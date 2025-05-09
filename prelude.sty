@@ -21,7 +21,6 @@
 \usepackage[x11names]{xcolor}
 
 \usepackage{tikz}
-\usepackage{tikz-3dplot}
 \usepackage{tkz-euclide}
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows}
@@ -36,6 +35,19 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\bfalph}{\bfseries(\alph*)}
+\newcommand{\eps}{\epsilon}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\tors}{\text{tors}}
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Cent}{Cent}
 
 % Header
 
@@ -43,10 +55,10 @@
 \pagestyle{fancy}
 
 % Stolen from jeffe.sty
-\def\@Class{MATH 416H}
+\def\@Class{MATH 424}
 \def\Class#1{\renewcommand{\@Class}{#1}}
 
-\def\@Title{HW \#7}
+\def\@Title{Final Theorems}
 \def\Title#1{\renewcommand{\@Title}{#1}}
 
 \def\@Author{Your Name}
@@ -91,7 +103,7 @@
 	breakable,
 	sharp corners,
 	parbox = false,
-	colback = black!10,
+	colback = black!5,
 	frame hidden,
 	% frame code = {
 	% 		\fill[fill=black!75!white] ([xshift=-.5mm]interior.south west) -- (interior.south west) -- (interior.north west) -- ([xshift=-.5mm]interior.north west);
@@ -99,9 +111,9 @@
 	% toprule=0mm,
 	% bottomrule=0mm,
 	% rightrule=0mm,
-	borderline north = {0.5mm}{0mm}{black!10},
-	borderline south = {0.5mm}{0mm}{black!10},
-	borderline east = {0.5mm}{0mm}{black!10},
+	borderline north = {0.5mm}{0mm}{black!5},
+	borderline south = {0.5mm}{0mm}{black!5},
+	borderline east = {0.5mm}{0mm}{black!5},
 	borderline west = {0.5mm}{0mm}{black!75!white}
 }
 % for some reason, tcb/ams nodisplayskip breaks everything, so we have to use nccmath
